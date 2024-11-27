@@ -1,3 +1,16 @@
-h1 {
-    color: black;
+body {
+  background-color: #f4f1ef;
+  font-family: "Lato", serif;
+}
+.main-container {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+:root {
+  --black: #463e3b;
+  --white: #f4f1ef;
+  --accent-color-light: #b2a69a;
+  --accent-color-dark: #8f7e62;
+  --main-font: "Lato", serif;
+  --accent-font: "Nova Mono", serif;
 }

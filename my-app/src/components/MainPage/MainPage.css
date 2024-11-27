@@ -1,0 +1,198 @@
+@keyframes rotateHover {
+  0% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
+.mainpage {
+  max-width: 1140px;
+  max-height: 680px;
+  margin: 60px auto 60px auto;
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(5, 1fr) 40px;
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.mainpage-header {
+  color: var(--black);
+  font-family: var(--accent-font);
+  font-size: 68px;
+  grid-column: 1 / 4;
+  grid-row: 1 / 1;
+}
+.mainpage-header::first-letter {
+  font-size: 80px;
+  font-weight: 500;
+  font-style: italic;
+}
+.mainpage aside {
+  grid-column: 6 / 6;
+  grid-row: 1 / 7;
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mainpage aside ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mainpage aside ul li a {
+  text-decoration: none;
+  color: var(--black);
+  writing-mode: vertical-rl;
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 16px;
+  font-weight: 600;
+  padding-left: 4px;
+  padding-right: 4px;
+  cursor: pointer;
+  transition: all ease-in-out 2ms;
+}
+.mainpage aside ul li a:hover {
+  text-decoration: underline;
+}
+
+.mainpage-box {
+  border-radius: 40px;
+  color: var(--white);
+  text-align: center;
+  font-family: var(--main-font);
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.mainpage-box:hover {
+  transform: scale(1.05); 
+}
+.mainpage-box1 {
+  display: block;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.25)),
+    url(../../images/travel_img.png);
+  width: 100%;
+  height: 100%;
+  grid-column: 1 / 1;
+  grid-row: 2 / 2;
+}
+.mainpage-box2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.745), rgba(0, 0, 0, 0.5)),
+    url(../../images/games_img.png);
+  width: 100%;
+  height: 300px;
+  grid-column: 2 / 4;
+  grid-row: 2 / 2;
+}
+.mainpage-box3 {
+  display: flex;
+  flex-direction: column; 
+  justify-content: flex-end; 
+  align-items: center; 
+  width: auto;
+  height: auto;
+  border-radius: 40px;
+  background-color: var(--accent-color-light);
+  grid-column: 4 / 6;
+  grid-row: 1 / 7;
+  padding: 32px;
+  transition: transform 0.3s ease-in-out; 
+}
+.mainpage-box4 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.745), rgba(0, 0, 0, 0.5)),
+    url(../../images/candle_img.png);
+  width: 100%;
+  height: 100%;
+  grid-column: 1 / 3;
+  grid-row: 3 / 6;
+}
+
+.mainpage-box5 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.745), rgba(0, 0, 0, 0.5)),
+    url(../../images/movies_img.png);
+  width: 100%;
+  height: 100%;
+  grid-column: 3 / 3;
+  grid-row: 3 / 3;
+}
+.mainpage-box6 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.745), rgba(0, 0, 0, 0.5)),
+    url(../../images/books_img.png);
+  width: 100%;
+  height: 100%;
+  grid-column: 3 / 3;
+  grid-row: 4 / 6;
+}
+.mainpage-box7{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.745), rgba(0, 0, 0, 0.5)),
+    url(../../images/music_img.png);
+  width: 100%;
+  height: 100%;
+  grid-column: 1 / 4;
+  grid-row: 6 / 6;
+}
+
+.mainpage-box1 h3 {
+  line-height: 100%; 
+  margin: 20px 0 10px 0;
+}
+
+.mainpage-box3 h2 {
+  font-family: var(--accent-font);
+  font-size: 38px;
+  text-align: left;
+}
+.mainpage-box3 h3 {
+  margin: 8px 0;
+  font-family: var(--main-font);
+  font-size: 32px;
+  font-weight: 300;
+  text-align: left;
+}
+.mainpage-box2 h3{
+  writing-mode: vertical-rl;
+  margin-right: -320px;
+}
+
+.mainpage-box4 h3{
+  margin-bottom: 4px;
+  margin-top: 90px;
+}
+.mainpage-box5 h3{
+  margin: 12px auto;
+}
+.mainpage-box6 h3{
+  margin: 12px auto;
+}
+
+.main-photo {
+  display: block;
+  width: 240px;
+  height: auto;
+  margin: 0 auto;
+}
+.main-photo:hover {
+  animation: rotateHover 0.5s ease-in-out alternate;
+}
+
+[data-type="featured"] {
+  transition: transform 0.3s ease-in-out; 
+}
+
+[data-type="featured"]:hover {
+  transform: scale(1.05); 
+}
