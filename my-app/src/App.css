@@ -2,7 +2,9 @@ body {
   background-color: #f4f1ef;
   color: #463e3b;
   font-family: "Lato", serif;
+  margin: 0;
 }
+
 .main-container {
   max-width: 1160px;
   margin: 0 auto;
