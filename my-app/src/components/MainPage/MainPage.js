@@ -1,19 +1,27 @@
 import React, { useState } from "react";
 import "./MainPage.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MainPhoto from "../../images/main_photo.png";
 
 function MainPage() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const navigateTo = (path) => {
+    navigate(path);
+  };
+
   return (
     <section className="mainpage">
       {/* Burger Menu */}
-      <div className={`burger-menu ${menuOpen ? "open" : ""}`} onClick={toggleMenu}>
+      <div
+        className={`burger-menu ${menuOpen ? "open" : ""}`}
+        onClick={toggleMenu}
+      >
         <div></div>
         <div></div>
         <div></div>
@@ -26,29 +34,29 @@ function MainPage() {
             </Link>
           </li>
           <li>
-            <a href="https://www.google.com/" target="_blank" rel="noreferrer" onClick={toggleMenu}>
+            <Link to="/boardgames" onClick={toggleMenu}>
               Board Games
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="https://www.google.com/" target="_blank" rel="noreferrer" onClick={toggleMenu}>
+            <Link to="/candles" onClick={toggleMenu}>
               Candles
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="https://www.google.com/" target="_blank" rel="noreferrer" onClick={toggleMenu}>
+            <Link to="/movies" onClick={toggleMenu}>
               Movies
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="https://www.google.com/" target="_blank" rel="noreferrer" onClick={toggleMenu}>
+            <Link to="/books" onClick={toggleMenu}>
               Books
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="https://www.google.com/" target="_blank" rel="noreferrer" onClick={toggleMenu}>
+            <Link to="/music" onClick={toggleMenu}>
               Music
-            </a>
+            </Link>
           </li>
         </ul>
       </aside>
@@ -60,22 +68,41 @@ function MainPage() {
         <h2>Hi, I am Tetiana</h2>
         <h3>and this page is about the things I love</h3>
       </div>
-      <div className="mainpage-box mainpage-box1">
+      {/* Main Boxes */}
+      <div
+        className="mainpage-box mainpage-box1"
+        onClick={() => navigateTo("/traveling")}
+      >
         <h3>Traveling</h3>
       </div>
-      <div className="mainpage-box mainpage-box2">
+      <div
+        className="mainpage-box mainpage-box2"
+        onClick={() => navigateTo("/boardgames")}
+      >
         <h3>Board Games</h3>
       </div>
-      <div className="mainpage-box mainpage-box4">
+      <div
+        className="mainpage-box mainpage-box4"
+        onClick={() => navigateTo("/candles")}
+      >
         <h3>Candle Making</h3>
       </div>
-      <div className="mainpage-box mainpage-box5">
+      <div
+        className="mainpage-box mainpage-box5"
+        onClick={() => navigateTo("/movies")}
+      >
         <h3>Movies</h3>
       </div>
-      <div className="mainpage-box mainpage-box6">
+      <div
+        className="mainpage-box mainpage-box6"
+        onClick={() => navigateTo("/books")}
+      >
         <h3>Books</h3>
       </div>
-      <div className="mainpage-box mainpage-box7">
+      <div
+        className="mainpage-box mainpage-box7"
+        onClick={() => navigateTo("/music")}
+      >
         <h3>Music</h3>
       </div>
     </section>
