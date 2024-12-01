@@ -15,13 +15,22 @@ function Navigation() {
   return (
     <nav className="main-navigation">
       {/* Burger Menu */}
-      <div className={`burger-menu ${menuOpen ? "open" : ""}`} onClick={toggleMenu}>
+      <div
+        className={`burger-menu ${menuOpen ? "open" : ""}`}
+        onClick={toggleMenu}
+      >
         <div></div>
         <div></div>
         <div></div>
       </div>
+      {/* Aside Menu */}
       <aside className={`burger-menu-nav ${menuOpen ? "open" : ""}`}>
         <ul>
+          <li>
+            <Link to="/" onClick={toggleMenu}>
+              Home
+            </Link>
+          </li>
           <li>
             <Link
               to="/traveling"
@@ -32,91 +41,102 @@ function Navigation() {
             </Link>
           </li>
           <li>
-            <a
-              href="https://www.google.com/"
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              to="/boardgames"
+              className={isActive("/boardgames") ? "active" : ""}
               onClick={toggleMenu}
             >
               Board Games
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.google.com/"
-              target="_blank"
-              rel="noreferrer"
-              onClick={toggleMenu}
-            >
-              Candles
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.google.com/"
-              target="_blank"
-              rel="noreferrer"
-              onClick={toggleMenu}
-            >
-              Movies
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.google.com/"
-              target="_blank"
-              rel="noreferrer"
-              onClick={toggleMenu}
-            >
-              Books
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.google.com/"
-              target="_blank"
-              rel="noreferrer"
-              onClick={toggleMenu}
-            >
-              Music
-            </a>
-          </li>
-        </ul>
-      </aside>
-      <div className="navbar">
-        <ul>
-          <li>
-            <Link to="/traveling" className={isActive("/traveling") ? "active" : ""}>
-              Traveling
             </Link>
           </li>
           <li>
-            <a href="https://www.google.com/" target="_blank" rel="noreferrer">
-              Board Games
-            </a>
-          </li>
-          <li>
-            <a href="https://www.google.com/" target="_blank" rel="noreferrer">
+            <Link
+              to="/candles"
+              className={isActive("/candles") ? "active" : ""}
+              onClick={toggleMenu}
+            >
               Candles
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="https://www.google.com/" target="_blank" rel="noreferrer">
+            <Link
+              to="/movies"
+              className={isActive("/movies") ? "active" : ""}
+              onClick={toggleMenu}
+            >
               Movies
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="https://www.google.com/" target="_blank" rel="noreferrer">
+            <Link
+              to="/books"
+              className={isActive("/books") ? "active" : ""}
+              onClick={toggleMenu}
+            >
               Books
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="https://www.google.com/" target="_blank" rel="noreferrer">
+            <Link
+              to="/music"
+              className={isActive("/music") ? "active" : ""}
+              onClick={toggleMenu}
+            >
               Music
-            </a>
+            </Link>
           </li>
         </ul>
-      </div>
+      </aside>
+      {/* Header */}
+      <header>
+        <ul>
+          <li>
+            <Link to="/" onClick={toggleMenu}>
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/traveling"
+              className={isActive("/traveling") ? "active" : ""}
+            >
+              Traveling
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              to="/boardgames"
+              className={isActive("/boardgames") ? "active" : ""}
+            >
+              Board Games
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/candles"
+              className={isActive("/candles") ? "active" : ""}
+            >
+              Candles
+            </Link>
+          </li>
+          <li>
+            <Link to="/movies" className={isActive("/movies") ? "active" : ""}>
+              Movies
+            </Link>
+          </li>
+          <li>
+            <Link to="/books" className={isActive("/books") ? "active" : ""}>
+              Books
+            </Link>
+          </li>
+          <li>
+            <Link to="/music" className={isActive("/music") ? "active" : ""}>
+              Music
+            </Link>
+          </li>
+        </ul>
+      </header>
     </nav>
   );
 }
