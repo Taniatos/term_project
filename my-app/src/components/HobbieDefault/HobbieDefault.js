@@ -1,7 +1,6 @@
 import React from "react";
 import Navigation from "../Navigation/Navigation";
 import "./HobbieDefault.css";
-import Footer from "../Footer/Footer";
 
 function HobbieDefault({ title, description, sections }) {
   return (
@@ -20,21 +19,30 @@ function HobbieDefault({ title, description, sections }) {
               {section.images.map((image, idx) => (
                 <div
                   key={idx}
-                  className="image-style"
+                  className={`image-style ${image.isActive ? "active" : ""}`}
+                  onClick={image.onClick} // Add onClick handler
                   style={{
                     backgroundImage: `linear-gradient(0deg, rgba(17, 19, 19, 0.8) 0%, rgba(41, 32, 32, 0.06) 100%), url(${
                       process.env.PUBLIC_URL + image.url
                     })`,
                   }}
                 >
-                  <h3>{image.caption}</h3>
+                  {image.weatherData ? (
+                    <div className="weather-overlay">
+                      <p>
+                        {image.weatherData.tempC}°C | {image.weatherData.tempF}°F
+                      </p>
+                      <p>{image.weatherData.description}</p>
+                    </div>
+                  ) : (
+                    <h3>{image.caption}</h3>
+                  )}
                 </div>
               ))}
             </div>
           </section>
         ))}
       </main>
-      <Footer />
     </div>
   );
 }
