@@ -24,4 +24,4 @@ yarn-error.log*
 
 /node_modules
 
-/data/APIkeys.js
+src/data/APIkeys.js
