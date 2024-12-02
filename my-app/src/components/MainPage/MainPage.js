@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./MainPage.css";
 import { Link, useNavigate } from "react-router-dom";
 import MainPhoto from "../../images/main_photo.png";
@@ -7,13 +7,31 @@ function MainPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
+  // Toggle the menu open/close state
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  // Navigate to a different path
   const navigateTo = (path) => {
     navigate(path);
   };
+
+  // Close the menu when screen size changes to desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 960 && menuOpen) {
+        setMenuOpen(false); // Close menu on resize to desktop
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [menuOpen]);
 
   return (
     <section className="mainpage">
@@ -26,6 +44,8 @@ function MainPage() {
         <div></div>
         <div></div>
       </div>
+
+      {/* Sidebar Navigation */}
       <aside className={`burger-menu-nav ${menuOpen ? "open" : ""}`}>
         <ul>
           <li>
@@ -68,6 +88,7 @@ function MainPage() {
         <h2>Hi, I am Tetiana</h2>
         <h3>and this page is about the things I love</h3>
       </div>
+
       {/* Main Boxes */}
       <div
         className="mainpage-box mainpage-box1"

@@ -29,6 +29,7 @@
   font-weight: 500;
   font-style: italic;
 }
+
 .mainpage aside {
   grid-column: 6 / 6;
   grid-row: 1 / 7;
@@ -57,6 +58,7 @@
   cursor: pointer;
   transition: all ease-in-out 2ms;
 }
+
 .mainpage aside ul li a:hover {
   text-decoration: underline;
 }
@@ -78,9 +80,11 @@
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
+
 .mainpage-box:hover {
   transform: scale(1.05);
 }
+
 .mainpage-box1 {
   display: block;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.25)),
@@ -90,6 +94,7 @@
   grid-column: 1 / 1;
   grid-row: 2 / 2;
 }
+
 .mainpage-box2 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.745), rgba(0, 0, 0, 0.5)),
     url(../../images/games_img.png);
@@ -98,6 +103,7 @@
   grid-column: 2 / 4;
   grid-row: 2 / 2;
 }
+
 .mainpage-box3 {
   display: flex;
   flex-direction: column;
@@ -113,6 +119,7 @@
   color: var(--black);
   transition: transform 0.3s ease-in-out;
 }
+
 .mainpage-box4 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.745), rgba(0, 0, 0, 0.5)),
     url(../../images/candle_img.png);
@@ -130,6 +137,7 @@
   grid-column: 3 / 3;
   grid-row: 3 / 3;
 }
+
 .mainpage-box6 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.745), rgba(0, 0, 0, 0.5)),
     url(../../images/books_img.png);
@@ -138,6 +146,7 @@
   grid-column: 3 / 3;
   grid-row: 4 / 7;
 }
+
 .mainpage-box7 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.745), rgba(0, 0, 0, 0.5)),
     url(../../images/music_img.png);
@@ -157,6 +166,7 @@
   font-size: 38px;
   text-align: left;
 }
+
 .mainpage-box3 h3 {
   margin: 8px 0;
   font-family: var(--main-font);
@@ -164,6 +174,7 @@
   font-weight: 300;
   text-align: left;
 }
+
 .mainpage-box2 h3 {
   writing-mode: vertical-rl;
   margin-right: -320px;
@@ -173,9 +184,11 @@
   margin-bottom: 4px;
   margin-top: 70px;
 }
+
 .mainpage-box5 h3 {
   margin: 12px auto;
 }
+
 .mainpage-box6 h3 {
   margin: 12px auto;
 }
@@ -186,6 +199,7 @@
   height: auto;
   margin: 0 auto;
 }
+
 .main-photo:hover {
   animation: rotateHover 0.5s ease-in-out alternate;
 }
@@ -283,6 +297,7 @@
 
   .mainpage .burger-menu div {
     background-color: var(--black);
+    box-shadow: 1px 1px 6px 0px rgba(255, 255, 255, 0.584);
     height: 4px;
     width: 100%;
     border-radius: 2px;
@@ -318,16 +333,31 @@
 
   .mainpage .burger-menu-nav.open {
     display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 100%;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+  
   }
 
   .mainpage .burger-menu-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
   }
 
   .mainpage .burger-menu-nav ul li {
-    margin: 15px 0;
+    margin: 8px 0;
   }
 
   .mainpage .burger-menu-nav ul li a {
@@ -335,8 +365,10 @@
     color: var(--black);
     font-size: 18px;
     font-weight: bold;
+    writing-mode: initial;
   }
 }
+
 @media screen and (max-width: 520px) {
   .mainpage-header {
     font-size: 34px;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Navigation.css";
 
@@ -7,10 +7,25 @@ function Navigation() {
   const location = useLocation();
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setMenuOpen((prev) => !prev);
   };
 
   const isActive = (path) => location.pathname === path;
+
+  // Close the burger menu on resize if the screen width exceeds 960px
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 960) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <nav className="main-navigation">
@@ -91,7 +106,7 @@ function Navigation() {
       <header>
         <ul>
           <li>
-            <Link to="/" onClick={toggleMenu}>
+            <Link to="/" className={isActive("/") ? "active" : ""}>
               Home
             </Link>
           </li>
@@ -103,7 +118,6 @@ function Navigation() {
               Traveling
             </Link>
           </li>
-
           <li>
             <Link
               to="/boardgames"
