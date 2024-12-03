@@ -1,15 +1,31 @@
 import React, { useState, useEffect } from "react";
 import HobbieDefault from "../HobbieDefault/HobbieDefault";
 import './Traveling.css';
-import Footer from "../Footer/Footer"; 
+import Footer from "../Footer/Footer";
 import UkraineImage from "../../images/ukraine_img.png";
 import API_KEY from "../../data/APIkeys";
 
-function Traveling() {
-  const [weatherInfo, setWeatherInfo] = useState(null);
-  const [error, setError] = useState(null);
+// Types for images and sections
+interface ImageData {
+  url: string;
+  caption: string;
+  lat: number;
+  lon: number;
+  capital: string;
+  onClick: () => void;
+}
 
-  const fetchWeather = async (lat, lon, countryName, capitalName) => {
+interface Section {
+  title: string;
+  description: string;
+  images: ImageData[];
+}
+
+const Traveling: React.FC = () => {
+  const [weatherInfo, setWeatherInfo] = useState<any>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchWeather = async (lat: number, lon: number, countryName: string, capitalName: string) => {
     try {
       const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
       console.log("API URL:", apiUrl);
@@ -35,18 +51,19 @@ function Traveling() {
         tempF: Math.round((data.main.temp * 9) / 5 + 32),
         description: data.weather[0].description
           .split(" ")
-          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+          .map((word: string) => word.charAt(0).toUpperCase() + word.slice(1))
           .join(" "),
       });
       setError(null);
-    } catch (err) {
+    } catch (err: any) {
       console.error(err.message);
       setError(err.message);
     }
   };
 
-  const handleOutsideClick = (event) => {
-    if (!event.target.closest(".image-style")) {
+  const handleOutsideClick = (event: MouseEvent) => {
+    const target = event.target as HTMLElement | null; 
+    if (target && !target.closest(".image-style")) { 
       setWeatherInfo(null);
     }
   };
@@ -61,7 +78,11 @@ function Traveling() {
     return () => document.removeEventListener("click", handleOutsideClick);
   }, [weatherInfo]);
 
-  const travelingContent = {
+  const travelingContent: {
+    title: string;
+    description: string;
+    sections: Section[];
+  } = {
     title: "Traveling",
     description:
       "Traveling is my psychotherapy. Whenever I need to think and make a hard (or not so hard) decision, I go somewhere. Well, I am a student at Boston University thanks to the Grand Canyon - I made my final decision to apply when beholding its endless beauty.",
@@ -77,6 +98,8 @@ function Traveling() {
             lat: 50.45,
             lon: 30.5241,
             capital: "Kyiv",
+            onClick: () =>
+              fetchWeather(50.45, 30.5241, "Ukraine", "Kyiv"),
           },
           {
             url: UkraineImage,
@@ -84,6 +107,8 @@ function Traveling() {
             lat: 37.7749,
             lon: -122.4194,
             capital: "Washington, D.C.",
+            onClick: () =>
+              fetchWeather(37.7749, -122.4194, "USA", "Washington, D.C."),
           },
           {
             url: UkraineImage,
@@ -91,6 +116,8 @@ function Traveling() {
             lat: 48.8566,
             lon: 2.3522,
             capital: "Paris",
+            onClick: () =>
+              fetchWeather(48.8566, 2.3522, "France", "Paris"),
           },
         ],
       },
@@ -105,6 +132,8 @@ function Traveling() {
             lat: 36.7783,
             lon: -119.4179,
             capital: "Sacramento",
+            onClick: () =>
+              fetchWeather(36.7783, -119.4179, "California", "Sacramento"),
           },
           {
             url: UkraineImage,
@@ -112,6 +141,8 @@ function Traveling() {
             lat: 31.9686,
             lon: -99.9018,
             capital: "Austin",
+            onClick: () =>
+              fetchWeather(31.9686, -99.9018, "Texas", "Austin"),
           },
           {
             url: UkraineImage,
@@ -119,6 +150,8 @@ function Traveling() {
             lat: 40.7128,
             lon: -74.006,
             capital: "Albany",
+            onClick: () =>
+              fetchWeather(40.7128, -74.006, "New York", "Albany"),
           },
         ],
       },
@@ -133,8 +166,7 @@ function Traveling() {
           ...section,
           images: section.images.map((image) => ({
             ...image,
-            onClick: () =>
-              fetchWeather(image.lat, image.lon, image.caption, image.capital),
+            onClick: image.onClick,
           })),
         }))}
       />
@@ -163,6 +195,6 @@ function Traveling() {
       <Footer />
     </div>
   );
-}
+};
 
 export default Traveling;
