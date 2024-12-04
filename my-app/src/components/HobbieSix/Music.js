@@ -1,6 +1,6 @@
 import React from "react";
 import HobbieDefault from "../HobbieDefault/HobbieDefault";
-import UkraineImage from "../../images/ukraine_img.png";
+import UkraineImage from "../../images/Travel_Imgs/ukraine_img.png";
 
 function Music() {
   const musicContent = {

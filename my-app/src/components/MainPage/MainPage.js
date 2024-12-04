@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./MainPage.css";
 import { Link, useNavigate } from "react-router-dom";
-import MainPhoto from "../../images/main_photo.png";
+import MainPhoto from "../../images/MainPage_Imgs/main_photo.png";
 
 function MainPage() {
   const [menuOpen, setMenuOpen] = useState(false);
