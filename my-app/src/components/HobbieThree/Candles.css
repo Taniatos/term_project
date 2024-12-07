@@ -1,0 +1,64 @@
+.candles-section {
+    margin: 40px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: var(--accent-color-light);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ingredients-table,
+  .steps-table {
+    margin-bottom: 40px;
+  }
+  
+  .ingredients-table h2,
+  .steps-table h2 {
+    font-family: var(--accent-font);
+    font-size: 40px;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  
+  .ingredients-table table {
+    width: 100%;
+    border-spacing: 0 10px;
+  }
+  
+  .ingredients-table td {
+    padding: 12px;
+    font-size: 18px;
+    color: var(--black);
+    vertical-align: top;
+  }
+  
+  .ingredients-table td:first-child {
+    text-align: right;
+    font-weight: bold;
+  }
+  
+  .steps-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .steps-table td {
+    padding: 12px;
+    font-size: 18px;
+  }
+  
+  .steps-table .step-number {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: var(--accent-color-dark);
+    color: var(--white);
+    text-align: center;
+    border-radius: 8px;
+    width: 50px;
+  }
+  
+  .steps-table tr {
+    margin-bottom: 20px;
+    display: block; 
+  }
+  
