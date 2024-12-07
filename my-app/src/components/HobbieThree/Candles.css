@@ -11,7 +11,22 @@
   .steps-table {
     margin-bottom: 40px;
   }
-  
+  .ingredients-table h1{
+    font-family: var(--accent-font);
+    font-size: 48px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .ingredients-table h1::after{
+    content: "";
+    display: block;
+    width: 200px;
+    height: 2px;
+    background-color: var(--black);
+    margin: 10px auto 0;
+
+  }
   .ingredients-table h2,
   .steps-table h2 {
     font-family: var(--accent-font);
