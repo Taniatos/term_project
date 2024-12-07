@@ -36,6 +36,7 @@ function Candles() {
       <HobbieDefault {...candlesContent} />
       <section className="candles-section">
         <div className="ingredients-table">
+        <h1>Your first candle guide</h1>
           <h2>Ingredients</h2>
           <table>
             <tbody>
