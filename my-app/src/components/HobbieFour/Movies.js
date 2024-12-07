@@ -1,35 +1,52 @@
 import React from "react";
 import HobbieDefault from "../HobbieDefault/HobbieDefault";
-import UkraineImage from "../../images/Travel_Imgs/ukraine_img.png";
+import "./Movies.css";
+import MoviesImage from "../../images/Movies_Imgs/movies_img.png";
+import TVShowsImage from "../../images/Movies_Imgs/tvshows_img.png";
 
 function Movies() {
   const moviesContent = {
     title: "Movies",
     description:
-      "Guess how I spend time with my friends. Yes, it's board games of different genres and complexity. On this page, you'll find my TOP games I always recommend.",
+      "Let's cut it short - no need to explain why people watch movies or TV shows! I've prepared a list of the movies I would erase my memory of so I can watch them again. It is followed by the TV shows I totally recommend. Click on the images and enjoy!",
     sections: [
       {
-        title: "Games for parties",
-        description: "to have fun and enjoy your time together",
+        title: "Movies",
+        description: "that are worth your while. Hope you'll enjoy each of them!",
         images: [
-          { url: UkraineImage, caption: "Ukraine" },
-          { url: UkraineImage, caption: "Ukraine" },
-          { url: UkraineImage, caption: "Ukraine" },
+          {
+            url: MoviesImage,
+            onClick: () =>
+              window.open(
+                "https://www.imdb.com/list/ls590312759/?ref_=ext_shr_lnk",
+                "_blank"
+              ),
+          },
         ],
       },
       {
-        title: "Games to think",
-        description: "but you will never regret it!",
+        title: "TV Shows",
+        description:
+          "of different genres: sitcoms, comedies, dramas, and more.",
         images: [
-          { url: UkraineImage, caption: "Ukraine" },
-          { url: UkraineImage, caption: "Ukraine" },
-          { url: UkraineImage, caption: "Ukraine" },
+          {
+            url: TVShowsImage,
+            onClick: () =>
+              window.open(
+                "https://www.imdb.com/list/ls590312782/?ref_=ext_shr_lnk",
+                "_blank"
+              ),
+          },
         ],
       },
     ],
   };
 
-  return <HobbieDefault {...moviesContent} />;
+  return (
+    <div className="movies-container">
+      <HobbieDefault {...moviesContent} />
+    </div>
+  );
 }
 
 export default Movies;
