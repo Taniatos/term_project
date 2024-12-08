@@ -8,7 +8,7 @@ function Movies() {
   const moviesContent = {
     title: "Movies",
     description:
-      "Let's cut it short - no need to explain why people watch movies or TV shows! I've prepared a list of the movies I would erase my memory of so I can watch them again. It is followed by the TV shows I totally recommend. Click on the images and enjoy!",
+      "Let's cut it short - no need to explain why people watch movies or TV shows! I've prepared a list of the movies I would erase my memory of so I can watch them again. It is followed by the TV shows I totally recommend. Simply click on the images!",
     sections: [
       {
         title: "Movies",

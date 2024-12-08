@@ -21,6 +21,17 @@ function App() {
           <Route path="/movies" element={<Movies />} />
           <Route path="/books" element={<Books />} />
           <Route path="/music" element={<Music />} />
+          <Route
+            path="*"
+            element={
+              <div className="error-page">
+                <h1 className="error-page-header">
+                  Ooops! Page Not found. <br />
+                  <a href="/" className="error-page-link">Back to Home Screen</a>
+                </h1>
+              </div>
+            }
+          />
         </Routes>
       </div>
     </Router>

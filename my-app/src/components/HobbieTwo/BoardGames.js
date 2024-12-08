@@ -40,7 +40,7 @@ function BoardGames() {
     sections: [
       {
         title: "Games for parties",
-        description: "to have fun and enjoy your time together",
+        description: "to have fun and enjoy your time together.",
         images: [
           { url: CodenamesImage, caption: "Codenames" },
           { url: KittensImage, caption: "Exploding Kittens" },

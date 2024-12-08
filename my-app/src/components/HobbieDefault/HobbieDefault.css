@@ -126,7 +126,9 @@
   .hobbiePage section {
     gap: 16px;
   }
-
+  .hobbiePage section h1 {
+    text-align: center;
+  }
   .images-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 180px;
