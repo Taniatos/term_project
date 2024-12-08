@@ -1,5 +1,6 @@
 import React from "react";
 import HobbieDefault from "../HobbieDefault/HobbieDefault";
+import Footer from "../Footer/Footer";
 
 // Games 1
 import CodenamesImage from "../../images/Games_Imgs/codenames_img.png";
@@ -83,6 +84,7 @@ function BoardGames() {
   return (
     <div className="board-games-container">
       <HobbieDefault {...boardGamesContent} />
+      <Footer />
     </div>
   );
 }

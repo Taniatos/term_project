@@ -1,5 +1,6 @@
 import React from "react";
 import HobbieDefault from "../HobbieDefault/HobbieDefault";
+import Footer from "../Footer/Footer";
 import "./Music.css";
 
 function Music() {
@@ -28,7 +29,12 @@ function Music() {
     ],
   };
 
-  return <HobbieDefault {...musicContent} />;
+  return (
+    <div>
+      <HobbieDefault {...musicContent} />
+      <Footer />
+    </div>
+  );
 }
 
 export default Music;

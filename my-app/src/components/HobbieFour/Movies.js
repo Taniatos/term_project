@@ -1,5 +1,6 @@
 import React from "react";
 import HobbieDefault from "../HobbieDefault/HobbieDefault";
+import Footer from "../Footer/Footer";
 import "./Movies.css";
 import MoviesImage from "../../images/Movies_Imgs/movies_img.png";
 import TVShowsImage from "../../images/Movies_Imgs/tvshows_img.png";
@@ -45,6 +46,7 @@ function Movies() {
   return (
     <div className="movies-container">
       <HobbieDefault {...moviesContent} />
+      <Footer />
     </div>
   );
 }

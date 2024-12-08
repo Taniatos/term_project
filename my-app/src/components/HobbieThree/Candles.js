@@ -1,5 +1,6 @@
 import React from "react";
 import HobbieDefault from "../HobbieDefault/HobbieDefault";
+import Footer from "../Footer/Footer";
 import "./Candles.css";
 
 // Candles Images
@@ -95,6 +96,7 @@ function Candles() {
           </table>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
