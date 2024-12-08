@@ -3,12 +3,12 @@ import HobbieDefault from "../HobbieDefault/HobbieDefault";
 import "./Candles.css";
 
 // Candles Images
-import CandleOneImage from "../../images/Candles_Imgs/candle_one_img.png";
-import CandleTwoImage from "../../images/Candles_Imgs/candle_two_img.png";
-import CandleThreeImage from "../../images/Candles_Imgs/candle_three_img.png";
-import CandleFourImage from "../../images/Candles_Imgs/candle_four_img.png";
-import CandleFiveImage from "../../images/Candles_Imgs/candle_five_img.png";
-import CandleSixImage from "../../images/Candles_Imgs/candle_six_img.png";
+import CandleOneImage from "../../images/Candles_imgs/candle_one_img.png";
+import CandleTwoImage from "../../images/Candles_imgs/candle_two_img.png";
+import CandleThreeImage from "../../images/Candles_imgs/candle_three_img.png";
+import CandleFourImage from "../../images/Candles_imgs/candle_four_img.png";
+import CandleFiveImage from "../../images/Candles_imgs/candle_five_img.png";
+import CandleSixImage from "../../images/Candles_imgs/candle_six_img.png";
 
 function Candles() {
   const candlesContent = {
