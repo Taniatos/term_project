@@ -15,31 +15,35 @@ function HobbieDefault({ title, description, sections }) {
           <section key={index}>
             <h1>{section.title}</h1>
             <p>{section.description}</p>
-            <div className="images-grid">
-              {section.images.map((image, idx) => (
-                <div
-                  key={idx}
-                  className={`image-style ${image.isActive ? "active" : ""}`}
-                  onClick={image.onClick} // Add onClick handler
-                  style={{
-                    backgroundImage: `linear-gradient(0deg, rgba(17, 19, 19, 0.8) 0%, rgba(41, 32, 32, 0.06) 100%), url(${
-                      process.env.PUBLIC_URL + image.url
-                    })`,
-                  }}
-                >
-                  {image.weatherData ? (
-                    <div className="weather-overlay">
-                      <p>
-                        {image.weatherData.tempC}°C | {image.weatherData.tempF}°F
-                      </p>
-                      <p>{image.weatherData.description}</p>
-                    </div>
-                  ) : (
-                    <h3>{image.caption}</h3>
-                  )}
-                </div>
-              ))}
-            </div>
+            {section.iframe ? (
+              <div className="iframe-container">{section.iframe}</div>
+            ) : (
+              <div className="images-grid">
+                {section.images.map((image, idx) => (
+                  <div
+                    key={idx}
+                    className={`image-style ${image.isActive ? "active" : ""}`}
+                    onClick={image.onClick}
+                    style={{
+                      backgroundImage: `linear-gradient(0deg, rgba(17, 19, 19, 0.8) 0%, rgba(41, 32, 32, 0.06) 100%), url(${
+                        process.env.PUBLIC_URL + image.url
+                      })`,
+                    }}
+                  >
+                    {image.weatherData ? (
+                      <div className="weather-overlay">
+                        <p>
+                          {image.weatherData.tempC}°C | {image.weatherData.tempF}°F
+                        </p>
+                        <p>{image.weatherData.description}</p>
+                      </div>
+                    ) : (
+                      <h3>{image.caption}</h3>
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
           </section>
         ))}
       </main>
