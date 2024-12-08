@@ -21,6 +21,17 @@ function App() {
           <Route path="/movies" element={<Movies />} />
           <Route path="/books" element={<Books />} />
           <Route path="/music" element={<Music />} />
+          <Route
+            path="*"
+            element={
+              <div>
+                <h1>
+                  Ooops! Page Not found. <br />
+                  <a href="/">Back to Home Screen</a>
+                </h1>
+              </div>
+            }
+          />
         </Routes>
       </div>
     </Router>
