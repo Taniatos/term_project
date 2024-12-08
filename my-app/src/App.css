@@ -18,11 +18,11 @@ body {
   --accent-font: "Nova Mono", serif;
 }
 
-.App h1 {
+.error-page-header {
   text-align: center;
   margin-top: 40px;
 }
-.App a {
+.error-page-link {
   text-align: center;
   margin-top: 60px;
   font-size: 16px;
