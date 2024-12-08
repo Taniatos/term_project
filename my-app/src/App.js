@@ -24,10 +24,10 @@ function App() {
           <Route
             path="*"
             element={
-              <div>
-                <h1>
+              <div className="error-page">
+                <h1 className="error-page-header">
                   Ooops! Page Not found. <br />
-                  <a href="/">Back to Home Screen</a>
+                  <a href="/" className="error-page-link">Back to Home Screen</a>
                 </h1>
               </div>
             }
