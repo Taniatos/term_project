@@ -37,5 +37,5 @@ This website includes six pages, each highlighting a specific hobby:
 
 ## How to View the Project
 
-1. Access the project on [GitHub](#https://github.com/Taniatos/term_project).
-2. Visit the live hosted version [here](#https://tetianas-about-me-website.netlify.app/).
+1. Access the project on GitHub: https://github.com/Taniatos/term_project.
+2. Visit the live hosted version: https://tetianas-about-me-website.netlify.app/.
